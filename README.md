@@ -10,16 +10,17 @@ In order to use this repository you need the following:
 
 ## Using ACME Vagrant Environment
 
-This repo was developed to be copied and re-used as needed in other projects. It
-is only meant to make per project golang environments easier to manage. I have
-tried other golang modules for puppet and they didn't work as expected.
-
 Clone or copy the repo and do the following:
 
     $ cd /path/to/repo
     $ vagrant up
-    $ vagrant ssh
+    $ vagrant status
+    $ vagrant ssh lb01 - to view nginx VM
+    $ vagrant ssh app01 - to view go app server VM
+    $ vagrant ssh app02 - to view go app server VM
     # ...test go
     $ go version
     $ go install hello
     $ hello
+
+    $ http://10.11.12.50:8080 - to go via the load balancer (round robin) to the app
