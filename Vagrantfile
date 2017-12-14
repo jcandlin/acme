@@ -8,9 +8,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     lb01.vm.box = "ubuntu/trusty64"
     lb01.vm.hostname = "lb01"
     lb01.vm.network :private_network, ip: "10.11.12.50"
-  config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "nginx.pp"
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = 'puppet/manifests'
+    puppet.module_path = 'puppet/modules'
+    puppet.manifest_file = 'init.pp'
   config.vm.network "forwarded_port", guest: 80, host: 8080
 end
 end
