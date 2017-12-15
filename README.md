@@ -15,7 +15,9 @@ Clone or copy the repo and do the following:
     $ cd /path/to/repo
     $ vagrant up lb01 - nginx load balancer
     $ vagrant up app01 - go application server
+    $ vagrant provision app01
     $ vagrant up app02 - go application server
+    $ vagrant provision app02
     $ vagrant status
     $ vagrant ssh lb01 - to view nginx VM
     $ vagrant ssh app01 - cd /vagrant/src/app; go run app.go
@@ -41,6 +43,6 @@ Clone or copy the repo and do the following:
 
 ## Further considerations
 
-    $ Use "vagrant up" to start all VM's
+    $ Use "vagrant up" to start and provision all VM's
     $ Code in the puppet manifests for the application to auto start at build time - this wasn't done in this case to allow more control over the load-balancer testing.
     $ Set up a Jenkins provisiong job to build/deploy the enviroment and/or stop and start any or all of the services
