@@ -35,4 +35,6 @@ Clone or copy the repo and do the following:
     $ restart the go app on app01
     $ http://10.11.12.50:80 - 10.11.12.1 - - [15/Dec/2017:17:18:27 +0000] "GET /favicon.ico HTTP/1.1" 200 36 "http://10.11.12.50/" indicates that the app is being served from app01 again
 
+## Clearing the enviroment
 
+    $ vagrant destroy
