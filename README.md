@@ -38,3 +38,9 @@ Clone or copy the repo and do the following:
 ## Clearing the enviroment
 
     $ vagrant destroy
+
+## Further considerations
+
+    $ Use "vagrant up" to start all VM's
+    $ Code in the puppet manifests for the application to auto start at build time - this wasn't done in this case to allow more control over the load-balancer testing.
+    $ Set up a Jenkins provisiong job to build/deploy the enviroment and/or stop and start any or all of the services
