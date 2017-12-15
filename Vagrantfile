@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifests_path = 'puppet/manifests'
     puppet.module_path = 'puppet/modules'
     puppet.manifest_file = 'init.pp'
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+#  config.vm.network "forwarded_port", guest: 80, host: 8080
 end
 end
   config.vm.define "app01" do |app01|
@@ -22,6 +22,7 @@ end
   config.vm.provision :puppet do |puppet|
     puppet.environment      = "development"
     puppet.environment_path = "environments"
+#  config.vm.network "forwarded_port", guest: 81, host: 8081
 end
 end
   config.vm.define "app02" do |app02|
@@ -31,6 +32,7 @@ end
   config.vm.provision :puppet do |puppet|
     puppet.environment      = "development"
     puppet.environment_path = "environments"
+#  config.vm.network "forwarded_port", guest: 82, host: 8082
 end
 end
 end
